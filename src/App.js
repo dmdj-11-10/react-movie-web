@@ -7,11 +7,11 @@ class App extends React.Component {
   // state is Object and inner Data and data is Change.
   
   plus = () => {
-    console.log("plus");
+    this.setState(current => ({ count: current.count + 1 }));
   };  // plus Function
-
+  
   minus = () => {
-    console.log("minus");
+    this.setState(current => ({ count: current.count - 1 }));
   }; // minus Function
 
   render() {
