@@ -14,9 +14,7 @@ class App extends React.Component {
       data: {
         data: { movies },
       },
-    } = await axios.get(
-      'https://yts-proxy.nomadcoders1.now.sh/list_movies.json?sort_by=rating',
-    );
+    } = await axios.get('https://yts-proxy.nomadcoders1.now.sh/list_movies.json?sort_by=rating');
     this.setState({ movies, isLoading: false });
   };
 
@@ -30,20 +28,15 @@ class App extends React.Component {
       <section className="container">
         {isLoading ? (
           <div className="loader">
-            <span className="loader-text">Loading...</span>
+            <div className="loader-box">
+              <div className="loader-spin"></div>
+              <span className="loader-text">Loading...</span>
+            </div>
           </div>
         ) : (
           <div className="movies-container">
             {movies.map((movie) => (
-              <Movie
-                key={movie.id}
-                id={movie.id}
-                year={movie.year}
-                title={movie.title}
-                summary={movie.summary}
-                poster={movie.medium_cover_image}
-                genres={movie.genres}
-              />
+              <Movie key={movie.id} id={movie.id} year={movie.year} title={movie.title} summary={movie.summary} poster={movie.medium_cover_image} genres={movie.genres} />
             ))}
           </div>
         )}

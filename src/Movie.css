@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+.movies-container .movies-list {
+  position: relative;
+  width: 19%;
+  margin: 2.4rem 0.5%;
+  min-width: 240px;
+  max-width: 240px;
+  max-height: 360px;
+  border-radius: 0.4rem;
+  user-select: none;
+  overflow: hidden;
+  box-shadow: 10px 10px 10px 0px #bcb6ca66;
+}
+.movie-poster {
+  width: 100%;
+  height: 100%;
+  vertical-align: center;
+  border-radius: 0.4rem;
+}
+.movie-data {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  border-radius: 0.4rem;
+  background-color: #0a0a0ad9;
+  opacity: 0;
+  transition: 0.2s;
+  overflow: hidden;
+}
+.movies-list:hover > .movie-data {
+  opacity: 1;
+}
+.movie-data > .movie-title {
+  padding: 0.8rem 0;
+  margin: 0 0 0.8rem 0;
+  border-bottom: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+.movie-data > .movie-year {
+  padding: 0.4rem 0;
+  color: #ffffffe6;
+  font-size: 1.4rem;
+}
+.movie-data > .movie-genres {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.4rem 0;
+}
+.movie-data > .movie-genres > li {
+  padding: 0 0.8rem 0 0;
+  color: #ffffffb3;
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+.movie-data > .movie-summary {
+  width: 100%;
+  height: 6.4rem;
+  color: #ffffff73;
+  font-size: 1.2rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  line-height: 1.6rem;
+}
+
+@media (max-width: 450px) {
+  .movies-container .movies-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
+    max-height: unset;
+    padding: 2rem;
+    background-color: #ffffff;
+  }
+  .movie-poster {
+    width: auto;
+    height: 100%;
+    vertical-align: center;
+    border-radius: 0.4rem;
+  }
+  .movie-data {
+    position: unset;
+    width: 100%;
+    height: 100%;
+    padding: 2rem 1.2rem;
+    margin: 1.2rem 0 0 0;
+    background-color: #f6f6f6;
+    opacity: 1;
+  }
+  .movie-data > .movie-title {
+    color: #1d1d1d;
+    border-bottom-color: #1d1d1d;
+  }
+  .movie-data > .movie-year,
+  .movie-data > .movie-genres > li,
+  .movie-data > .movie-summary {
+    color: #000000;
+  }
+  .movie-data > .movie-genres > li,
+  .movie-data > .movie-summary {
+    font-weight: 600;
+  }
+}

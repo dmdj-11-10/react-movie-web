@@ -4,3 +4,5 @@
 
 (React Js Fundamentals Course (2019 Update!))
 : https://nomadcoders.co/react-fundamentals/lobby
+
+Layout은 메가박스를 사이트를 참고했어요!
